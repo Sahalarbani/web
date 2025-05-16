@@ -1,0 +1,35 @@
+{
+  "name": "gaming-blog",
+  "version": "1.0.0",
+  "description": "A gaming blog built with Next.js and Tailwind CSS featuring a cyberpunk theme.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint ."
+  },
+  "keywords": [
+    "gaming",
+    "blog",
+    "nextjs",
+    "tailwindcss",
+    "cyberpunk"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "next-auth": "^4.0.0",
+    "tailwindcss": "^2.0.0",
+    "postcss": "^8.0.0",
+    "autoprefixer": "^10.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.0",
+    "eslint": "^7.0.0",
+    "eslint-config-next": "^11.0.0"
+  }
+}
