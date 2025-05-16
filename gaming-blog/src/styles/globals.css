@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  background-color: #0f0f0f; /* Dark background */
+  color: #e0e0e0; /* Light text color */
+}
+
+body {
+  font-family: 'Roboto', sans-serif; /* Futuristic font */
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-shadow: 0 0 5px rgba(0, 255, 255, 0.7); /* Neon glow effect */
+}
+
+a {
+  color: #00ffcc; /* Neon link color */
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #ff00ff; /* Neon hover color */
+}
+
+button {
+  background-color: #00ffcc; /* Neon button color */
+  color: #0f0f0f; /* Dark text on button */
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #ff00ff; /* Neon button hover color */
+}
+
+.card {
+  background-color: #1a1a1a; /* Card background */
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5); /* Neon shadow */
+}
+
+.rating {
+  color: #ffcc00; /* Star color */
+}
+
+.comment {
+  background-color: #2a2a2a; /* Comment background */
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.gallery img {
+  border-radius: 0.5rem;
+  transition: transform 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05); /* Zoom effect on hover */
+}

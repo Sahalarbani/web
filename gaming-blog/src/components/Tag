@@ -1,0 +1,23 @@
+import React from 'react';
+import Link from 'next/link';
+
+interface TagProps {
+  tag: {
+    name: string;
+    slug: string;
+  };
+  postCount: number;
+}
+
+const Tag: React.FC<TagProps> = ({ tag, postCount }) => {
+  return (
+    <div className="flex items-center justify-between bg-gray-800 p-4 rounded-lg shadow-lg hover:bg-gray-700 transition duration-300">
+      <Link href={`/tag/${tag.slug}`}>
+        <a className="text-neon-green text-lg font-futuristic">{tag.name}</a>
+      </Link>
+      <span className="text-neon-blue text-sm">{postCount} Posts</span>
+    </div>
+  );
+};
+
+export default Tag;

@@ -1,0 +1,28 @@
+import React, { useState } from 'react';
+
+const Rating = ({ initialRating = 0, onRatingChange }) => {
+    const [rating, setRating] = useState(initialRating);
+
+    const handleRatingClick = (value) => {
+        setRating(value);
+        if (onRatingChange) {
+            onRatingChange(value);
+        }
+    };
+
+    return (
+        <div className="flex items-center space-x-1">
+            {[1, 2, 3, 4, 5].map((value) => (
+                <button
+                    key={value}
+                    className={`text-2xl ${value <= rating ? 'text-yellow-400' : 'text-gray-600'} hover:text-yellow-400`}
+                    onClick={() => handleRatingClick(value)}
+                >
+                    ★
+                </button>
+            ))}
+        </div>
+    );
+};
+
+export default Rating;

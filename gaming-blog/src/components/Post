@@ -1,0 +1,45 @@
+import React from 'react';
+import { useRouter } from 'next/router';
+import { PostType } from '../../types';
+import Gallery from '../Gallery';
+import Comment from '../Comment';
+import Rating from '../Rating';
+
+interface PostProps {
+  post: PostType;
+}
+
+const Post: React.FC<PostProps> = ({ post }) => {
+  const router = useRouter();
+
+  if (!post) {
+    return <div>Loading...</div>;
+  }
+
+  return (
+    <div className="max-w-3xl mx-auto p-4 bg-gray-900 text-white">
+      <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
+      <img src={post.thumbnail} alt={post.title} className="w-full h-auto mb-4 rounded" />
+      <div className="mb-4">
+        <Rating initialRating={post.rating} />
+      </div>
+      <div className="mb-4" dangerouslySetInnerHTML={{ __html: post.content }} />
+      {post.gallery && <Gallery images={post.gallery} />}
+      {post.video && (
+        <div className="mb-4">
+          <iframe
+            width="100%"
+            height="315"
+            src={`https://www.youtube.com/embed/${post.video}`}
+            title="YouTube video player"
+            frameBorder="0"
+            allowFullScreen
+          ></iframe>
+        </div>
+      )}
+      <Comment postId={post.id} />
+    </div>
+  );
+};
+
+export default Post;
